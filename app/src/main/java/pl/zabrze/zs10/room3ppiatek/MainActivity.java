@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -89,6 +90,14 @@ public class MainActivity extends AppCompatActivity {
                                 .wypiszPlanszowkiWedlugLiczbyGraczy(liczbaGraczy);
                         adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,szukaneGry);
                         listView.setAdapter(adapter);*/
+                    }
+                }
+        );
+        listView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        planszowkaViewModel.usunPlanszowke(adapter.getItem(i));
                     }
                 }
         );

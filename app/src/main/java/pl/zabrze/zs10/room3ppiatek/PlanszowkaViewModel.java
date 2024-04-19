@@ -25,4 +25,8 @@ public class PlanszowkaViewModel extends AndroidViewModel {
     public void wstawPlanszowke(Planszowka planszowka){
         planszowkiRepozytorium.wstaw(planszowka);
     }
+
+    public void usunPlanszowke(Planszowka planszowka){
+        planszowkiRepozytorium.usun(planszowka);
+    }
 }

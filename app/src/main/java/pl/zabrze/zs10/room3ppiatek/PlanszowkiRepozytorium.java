@@ -19,7 +19,16 @@ public class PlanszowkiRepozytorium {
     public LiveData<List<Planszowka>> getPlanszowki() {
         return planszowki;
     }
-
+    void usun (Planszowka planszowka){
+        GranieDatabase.databaseExecutor.execute(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        planszowkaDAO.usunZBazy(planszowka);
+                    }
+                }
+        );
+    }
     void wstaw (Planszowka planszowka){
         GranieDatabase.databaseExecutor.execute(
                 new Runnable() {
