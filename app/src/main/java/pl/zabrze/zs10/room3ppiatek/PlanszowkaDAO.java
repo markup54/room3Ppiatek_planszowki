@@ -1,5 +1,6 @@
 package pl.zabrze.zs10.room3ppiatek;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -15,8 +16,8 @@ public interface PlanszowkaDAO {
     public void wstawDoBazyKilka(Planszowka ... planszowki);
 
     @Query("SELECT * FROM planszowki")
-    public List<Planszowka> wypiszWszystkiePlanszowki();
+    public LiveData<List<Planszowka>> wypiszWszystkiePlanszowki();
 
     @Query("SELECT * FROM planszowki WHERE minLiczbaGraczy<=:liczbaGraczy and maxLiczbaGraczy>=:liczbaGraczy ")
-    public List<Planszowka> wypiszPlanszowkiWedlugLiczbyGraczy(int liczbaGraczy);
+    public LiveData<List<Planszowka>> wypiszPlanszowkiWedlugLiczbyGraczy(int liczbaGraczy);
 }
