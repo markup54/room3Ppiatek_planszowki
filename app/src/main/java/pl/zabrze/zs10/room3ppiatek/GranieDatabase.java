@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Planszowka.class}, version = 1)
+@Database(entities = {Planszowka.class},exportSchema = false, version = 1)
 public abstract class GranieDatabase extends RoomDatabase {
 
     private static volatile GranieDatabase instancja;
