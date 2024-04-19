@@ -21,6 +21,13 @@ public class PlanszowkiRepozytorium {
     }
 
     void wstaw (Planszowka planszowka){
-        //TODO GranieDatabase.databaseWri
+        GranieDatabase.databaseExecutor.execute(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        planszowkaDAO.wstawDoBazy(planszowka);
+                    }
+                }
+        );
     }
 }
