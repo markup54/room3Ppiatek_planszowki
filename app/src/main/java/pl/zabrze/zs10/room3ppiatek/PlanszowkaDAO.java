@@ -11,6 +11,9 @@ public interface PlanszowkaDAO {
     @Insert
     public void wstawDoBazy(Planszowka planszowka);
 
+    @Insert
+    public void wstawDoBazyKilka(Planszowka ... planszowki);
+
     @Query("SELECT * FROM planszowki")
     public List<Planszowka> wypiszWszystkiePlanszowki();
 

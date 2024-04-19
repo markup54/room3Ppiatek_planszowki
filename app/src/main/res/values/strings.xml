@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">room3Ppiatek</string>
+    <string-array name="kategoria">
+        <item>strategiczna</item>
+        <item>logiczna</item>
+        <item>ekonomiczna</item>
+        <item>imprezowa</item>
+        <item>karciana</item>
+    </string-array>
 </resources>
